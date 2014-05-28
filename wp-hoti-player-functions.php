@@ -786,10 +786,19 @@ function padDigits(number) {
 				$("#download").attr("onclick","");
 				$("#download").hide();
 			}
-		SC.stream(track.uri, {autoPlay: false, onfinish:playNextSound}, function (stream) {
-			window.stream = stream;
-            window.stream.play();
-		});
+			SC.stream(track.uri, {autoPlay: false, onfinish:playNextSound}, function (audioManager) {
+			  var player = audioManager._player;
+			  player.on("stateChange", function(evt){
+			    console.log(evt);
+			    switch(evt) {
+			      case "ended":
+			      	playNextSound();
+			        break;
+			    }
+			  });
+			  window.stream = player;
+			  window.stream.play();
+			});
 	}
 	
 	function playNextSound(){

@@ -116,27 +116,25 @@ display: none;
 background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
+letter-spacing: 0px;
 margin-top: 20px;
-margin-left: -25px;
-letter-spacing: -2px;
+margin-left: -21px;
+margin-bottom:-10px;
 }
 #title {
 color: #000000;
 font-weight: 600;
-font-size: 1.1em;
-line-height: 1.0em;
+font-size: 1.3em;
 font-family:'Exo', sans-serif;
 font-style:inherit;
 text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
 text-transform:uppercase;
-margin-bottom: 30px;
+letter-spacing: -1px;
 }
 .hoti > ul > li{
 font-family: "v1";
 display:inline;
 font-size: 35px;
-height: 35px;
-width: 35px;
 color: #fff;
 list-style-type: none;
 cursor: pointer;
@@ -196,9 +194,10 @@ display:none;
 background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
-margin-top: 15px!important;
-margin-left: -30px!important;
-
+letter-spacing: 0px;
+margin-top: 20px;
+margin-left: -21px;
+margin-bottom:-10px;
 }
 .hoti > ul > .downloadable:after {
 content: "e";

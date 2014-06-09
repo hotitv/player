@@ -134,7 +134,7 @@ letter-spacing: -1px;
 .hoti > ul > li{
 font-family: "v1";
 display:inline;
-font-size: 35px;
+font-size: 30px;
 color: #fff;
 list-style-type: none;
 cursor: pointer;
@@ -143,7 +143,7 @@ cursor: pointer;
 content: "a";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/play.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -151,7 +151,7 @@ background-position: center center;
 content: "b";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/pause.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -159,7 +159,7 @@ background-position: center center;
 content: "c";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/previous.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -167,7 +167,7 @@ background-position: center center;
 content: "d";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/next.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -175,7 +175,7 @@ background-position: center center;
 content: "f";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/info.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -183,7 +183,7 @@ background-position: center center;
 content: "e";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/download.svg');
-background-size:35px 35px;
+background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 display:none;
@@ -199,14 +199,18 @@ margin-top: 20px;
 margin-left: -21px;
 margin-bottom:-10px;
 }
-.hoti > ul > .downloadable:after {
+#download {
 content: "e";
-color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/download.svg');
-background-size:35px 35px;
-background-repeat:no-repeat;
-background-position: center center;
 display:none;
+color: rgba(0,0,0,0);
+background:url('http://hoti.tv/buttons/descargar.svg');
+height: 35px;
+background-repeat:no-repeat;
+background-position: left;
+cursor: pointer;
+margin-left:-2px;
+margin-bottom:25px;
+margin-top:-20px;
 }
 #title {
 color: #000000;

@@ -820,7 +820,6 @@ function padDigits(number) {
             <li id="toggle" class="play"></li>
             <li id="next"></li>
             <li id="prev"></li>
-            <li id="download"></li>
         </ul>
 		
 MY_MARKER;

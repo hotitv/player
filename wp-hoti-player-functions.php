@@ -696,7 +696,6 @@ $("#download").show();
 	</script>
         <ul>
             <li id="toggle" class="play"></li>
-            <li id="download"></li>
         </ul>
 MY_MARKER;
 }else 
@@ -874,13 +873,13 @@ MY_MARKER;
 			$("#toggle").toggleClass("pause");
 		});
 		$("#next").on("click", function () { 
-			window.stream.stop();
-			$("#toggle").attr("class","play pause");
+			window.stream.pause();
+            $("#toggle").attr("class","play pause");
 			playNextSound();
 		});
 		$("#prev").on("click", function () { 
-			window.stream.stop();
-			$("#toggle").attr("class","play pause");
+			window.stream.pause();
+            $("#toggle").attr("class","play pause");
 			playPrevSound();
 		});
 	},false);
@@ -947,19 +946,17 @@ function padDigits(number) {
 })(jQuery);
 	</script>
         <ul>
+            <li id="prev"></li>
             <li id="toggle" class="play"></li>
             <li id="next"></li>
-            <li id="prev"></li>
-            <li id="download"></li>
-        </ul>
-		
+        </ul>		
 MY_MARKER;
 }
 	}
-//if($format == 'sets' || $format == 'set') $format = 'playlists';
 	$player .= '</div>';
 	$player .= '<h5 id="track"></h5>';
 	$player .= '<h2 id="title"></h2>';
+    $player .= '<p id="download"></p>';
     
 	return $player;
 

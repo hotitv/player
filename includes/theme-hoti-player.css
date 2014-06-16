@@ -23,7 +23,7 @@ font-style: normal;
 background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
-letter-spacing: 0px;
+letter-spacing: -4px;
 margin-top: 20px;
 margin-left: -21px;
 margin-bottom:-10px;
@@ -41,7 +41,7 @@ cursor: pointer;
 content: "a";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/play.svg');
-background-size: 35px 35px;
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -49,7 +49,7 @@ background-position: center center;
 content: "b";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/pause.svg');
-background-size: 35px 35px;
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -57,7 +57,7 @@ background-position: center center;
 content: "c";
 color: rgba(0,0,0,0);
 background: url('http://hoti.tv/buttons/black/previous.svg');
-background-size: 35px 35px;
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -65,7 +65,7 @@ background-position: center center;
 content: "d";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/next.svg');
-background-size: 35px 35px;
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -73,7 +73,7 @@ background-position: center center;
 content: "f";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/buttons/black/info.svg');
-background-size: 35px 35px;
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
@@ -188,6 +188,10 @@ background-repeat:no-repeat;
 background-position: center center;
 display:none;
 }
+#download {
+content: "e";
+display:none;    
+}
 }
 @media only screen and (max-width: 767px) {
 .hoti{
@@ -223,4 +227,13 @@ text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
 text-transform:uppercase;
 margin-bottom: 30px;
 }
+.hoti > ul > .downloadable:after {
+content: "e";
+color: rgba(0,0,0,0);
+background:url('http://hoti.tv/buttons/black/download.svg');
+background-size:30px 30px;
+background-repeat:no-repeat;
+background-position: center center;
+display:none;
+}    
 }

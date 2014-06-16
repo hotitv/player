@@ -817,9 +817,9 @@ function padDigits(number) {
 })(jQuery);
 	</script>
         <ul>
+            <li id="prev"></li>
             <li id="toggle" class="play"></li>
             <li id="next"></li>
-            <li id="prev"></li>
         </ul>
 		
 MY_MARKER;

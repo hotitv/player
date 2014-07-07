@@ -24,9 +24,9 @@ background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
 letter-spacing: -4px;
-margin-top: 20px;
+margin-top: 5px;
 margin-left: -21px;
-margin-bottom:-10px;
+margin-bottom:-15px;
 }
 .hoti > ul > li{
 font-family: "v1";
@@ -40,39 +40,35 @@ cursor: pointer;
 .hoti > ul > .play:after {
 content: "a";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/play.svg');
-background-size: 25px 25px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -7px 0px;
 }
 .hoti > ul > .pause:after {
 content: "b";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/pause.svg');
-background-size: 25px 25px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -42px 0px;
 }
 .hoti > ul > #prev:after {
 content: "c";
 color: rgba(0,0,0,0);
-background: url('http://hoti.tv/buttons/black/previous.svg');
-background-size: 25px 25px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -78px 0px;
 }
 .hoti > ul > #next:after {
 content: "d";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/next.svg');
-background-size: 25px 25px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -113px 0px;
 }
 .hoti > ul > #playlist:after {
 content: "f";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/info.svg');
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
@@ -81,16 +77,19 @@ background-position: center center;
 content: "e";
 display:block;
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/descargar.svg');
-height: 35px;
+background:url('http://hoti.tv/iconos/player/descargar.svg');
 background-repeat:no-repeat;
 background-position: left;
 cursor: pointer;
 margin-left:-2px;
-margin-bottom:25px;
+margin-top: -10px;
+margin-bottom: 5px;
+border-bottom: 1px solid;
+border-color: #8f8f8f;
+padding-bottom: 50px;
 }
 #title {
-color: #000000;
+color: #8f8f8f;
 font-weight: 600;
 font-size: 1.3em;
 font-family:'Exo', sans-serif;
@@ -122,7 +121,7 @@ margin-left: -21px;
 margin-bottom:-10px;
 }
 #title {
-color: #000000;
+color: #8f8f8f;
 font-weight: 600;
 font-size: 1.3em;
 font-family:'Exo', sans-serif;
@@ -142,42 +141,51 @@ cursor: pointer;
 .hoti > ul > .play:after {
 content: "a";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/play.svg');
-background-size:30px 30px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -1px -2px;
 }
 .hoti > ul > .pause:after {
 content: "b";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/pause.svg');
-background-size:30px 30px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -36px -2px;
 }
 .hoti > ul > #prev:after {
 content: "c";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/previous.svg');
-background-size:30px 30px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -72px -2px;
 }
 .hoti > ul > #next:after {
 content: "d";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/next.svg');
-background-size:30px 30px;
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: center center;
+background-position: -108px -2px;
 }
 .hoti > ul > #playlist:after {
 content: "f";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/info.svg');
-background-size:30px 30px;
+background:url('http://hoti.tv/iconos/player/player.svg');
+background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
+}
+#download {
+content: "e";
+display:none!important;
+color: rgba(0,0,0,0);
+background:url('http://hoti.tv/iconos/player/descargar.svg');
+height: 35px;
+background-repeat:no-repeat;
+background-position: left;
+cursor: pointer;
+margin-left:-2px;
+margin-bottom:25px;
+margin-top:-20px;
 }
 .hoti > ul > .downloadable:after {
 content: "e";
@@ -187,10 +195,6 @@ background-size:30px 30px;
 background-repeat:no-repeat;
 background-position: center center;
 display:none;
-}
-#download {
-content: "e";
-display:none;    
 }
 }
 @media only screen and (max-width: 767px) {
@@ -205,9 +209,9 @@ margin-bottom:-10px;
 }
 #download {
 content: "e";
-display:none;
+display:none!important;
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/descargar.svg');
+background:url('http://hoti.tv/iconos/player/descargar.svg');
 height: 35px;
 background-repeat:no-repeat;
 background-position: left;
@@ -217,9 +221,9 @@ margin-bottom:25px;
 margin-top:-20px;
 }
 #title {
-color: #000000;
+color: #8f8f8f;
 font-weight: 600;
-font-size: 1.1em;
+font-size: 1.3em;
 line-height: 1.0em;
 font-family:'Exo', sans-serif;
 font-style:inherit;
@@ -227,13 +231,4 @@ text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
 text-transform:uppercase;
 margin-bottom: 30px;
 }
-.hoti > ul > .downloadable:after {
-content: "e";
-color: rgba(0,0,0,0);
-background:url('http://hoti.tv/buttons/black/download.svg');
-background-size:30px 30px;
-background-repeat:no-repeat;
-background-position: center center;
-display:none;
-}    
 }

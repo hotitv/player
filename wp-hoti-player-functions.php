@@ -874,12 +874,14 @@ MY_MARKER;
 		$("#next").on("click", function () { 
 			window.stream.pause();
             $("#toggle").attr("class","play pause");
-			playNextSound();
+			stop();
+            playNextSound();
 		});
 		$("#prev").on("click", function () { 
 			window.stream.pause();
             $("#toggle").attr("class","play pause");
-			playPrevSound();
+			stop();
+            playPrevSound();
 		});
 	},false);
 
@@ -948,17 +950,18 @@ function padDigits(number) {
             <li id="prev"></li>
             <li id="toggle" class="play"></li>
             <li id="next"></li>
-        </ul>		
+            <li id="download"></li>
+        </ul>
+		
 MY_MARKER;
 }
 	}
+//if($format == 'sets' || $format == 'set') $format = 'playlists';
 	$player .= '</div>';
 	$player .= '<h5 id="track"></h5>';
-	$player .= '<h2 id="title"></h2>';
-    $player .= '<p id="download"></p>';
+	$player .= '<h2 Playing Now:></h2><h2 id="title"></h2>';
     
 	return $player;
-
 }
 
 /*******************************************/

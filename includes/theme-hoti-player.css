@@ -23,18 +23,18 @@ font-style: normal;
 background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
-letter-spacing: -4px;
-margin-top: 5px;
-margin-left: -21px;
-margin-bottom:-15px;
+margin-top: 60px;
+margin-left: 0px;
+margin-bottom: 20px;
 }
 .hoti > ul > li{
 font-family: "v1";
 display:inline;
-font-size: 35px;
+font-size: 60px;
 color: #fff;
 list-style-type: none;
 cursor: pointer;
+letter-spacing: 20px;
 }
 
 .hoti > ul > .play:after {
@@ -42,61 +42,51 @@ content: "a";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -7px 0px;
+background-position: -170px 0px;
 }
 .hoti > ul > .pause:after {
 content: "b";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -42px 0px;
+background-position: -250px 0px;
 }
 .hoti > ul > #prev:after {
 content: "c";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -78px 0px;
+background-position: -5px 0px;
 }
 .hoti > ul > #next:after {
 content: "d";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -113px 0px;
+background-position: -95px 0px;
 }
 .hoti > ul > #playlist:after {
 content: "f";
+display:none;
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-size: 25px 25px;
 background-repeat:no-repeat;
 background-position: center center;
 }
-#download {
-content: "e";
-display:block;
+.hoti > ul > #download:after {
+content: "d";
 color: rgba(0,0,0,0);
-background:url('http://hoti.tv/iconos/player/descargar.svg');
+background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: left;
-cursor: pointer;
-margin-left:-2px;
-margin-top: -10px;
-margin-bottom: 5px;
-border-bottom: 1px solid;
-border-color: #8f8f8f;
-padding-bottom: 50px;
+background-position: -340px 0px;
 }
 #title {
-color: #8f8f8f;
-font-weight: 600;
-font-size: 1.3em;
-font-family:'Exo', sans-serif;
-font-style:inherit;
-text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
+color: #000000;
+font-size: 25px;
+font-family: 'Crimson Text', serif;
+font-style: italic;
 text-transform:uppercase;
-letter-spacing: -1px;
 }
 #track {
 display: none;
@@ -116,24 +106,18 @@ background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
 letter-spacing: 0px;
-margin-top: 20px;
-margin-left: -21px;
-margin-bottom:-10px;
 }
 #title {
-color: #8f8f8f;
-font-weight: 600;
-font-size: 1.3em;
-font-family:'Exo', sans-serif;
-font-style:inherit;
-text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
-text-transform:uppercase;
-letter-spacing: -1px;
+color: #000000;
+font-size: 25px;
+font-family: 'Crimson Text', serif;
+font-style: italic;
+text-transform:uppercase
 }
 .hoti > ul > li{
 font-family: "v1";
 display:inline;
-font-size: 30px;
+font-size: 40px;
 color: #fff;
 list-style-type: none;
 cursor: pointer;
@@ -143,28 +127,28 @@ content: "a";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -1px -2px;
+background-position: -83px 0px;
 }
 .hoti > ul > .pause:after {
 content: "b";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -36px -2px;
+background-position: -126px 0px;
 }
 .hoti > ul > #prev:after {
 content: "c";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -72px -2px;
+background-position: 0px 0px;
 }
 .hoti > ul > #next:after {
 content: "d";
 color: rgba(0,0,0,0);
 background:url('http://hoti.tv/iconos/player/player.svg');
 background-repeat:no-repeat;
-background-position: -108px -2px;
+background-position: -40px 0px;
 }
 .hoti > ul > #playlist:after {
 content: "f";
@@ -203,9 +187,9 @@ background-color: none!important;
 background-repeat:no-repeat;
 background-image: none!important;
 letter-spacing: 0px;
-margin-top: 20px;
-margin-left: -21px;
-margin-bottom:-10px;
+/* margin-top: 20px; */
+/* margin-left: -21px; */
+/* margin-bottom:-10px; */
 }
 #download {
 content: "e";
@@ -221,14 +205,10 @@ margin-bottom:25px;
 margin-top:-20px;
 }
 #title {
-color: #8f8f8f;
-font-weight: 600;
-font-size: 1.3em;
-line-height: 1.0em;
-font-family:'Exo', sans-serif;
-font-style:inherit;
-text-shadow:0px 0px 1px rgba(0, 0, 0,0.2);
+color: #000000;
+font-size: 18px;
+font-family: 'Crimson Text', serif;
+font-style: italic;
 text-transform:uppercase;
-margin-bottom: 30px;
 }
 }

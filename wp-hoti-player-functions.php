@@ -747,12 +747,14 @@ if($detect->isIOS()){
 		});
 		$("#next").on("click", function () { 
 			window.stream.pause();
+            block = true;
 			$("#toggle").attr("class","play pause");
 			stop();
             playNextSound();
 		});
 		$("#prev").on("click", function () { 
 			window.stream.pause();
+            block = true;
 			$("#toggle").attr("class","play pause");
 			stop();
             playPrevSound();
@@ -788,15 +790,15 @@ function padDigits(number) {
 				$("#download").attr("onclick","");
 				$("#download").hide();
 			}
-			SC.stream(track.uri, {autoPlay: true, onfinish:playNextSound}, function (audioManager) {
+			SC.stream(track.uri, {autoPlay: false, onfinish:playNextSound}, function (audioManager) {
 			  var player = audioManager._player;
 			  player.on("stateChange", function(evt){
 			    console.log(evt);
 			    switch(evt) {
 			      case "ended":
                     stop();
-                    playNextSound();
-				    block = true;
+                    playNextSound();                
+                    block = true;
                     break;
 			    }
 			  });

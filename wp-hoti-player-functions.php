@@ -741,17 +741,18 @@ if($detect->isIOS()){
 				block = true;
 			}else{
 				window.stream.pause();
+                block = false;
 			}
-			$("#toggle").toggleClass("play pause");
+			$("#toggle").toggleClass("pause");
 		});
 		$("#next").on("click", function () { 
-			stop();
+			window.stream.pause();
 			$("#toggle").attr("class","play pause");
 			stop();
             playNextSound();
 		});
 		$("#prev").on("click", function () { 
-			stop();
+			window.stream.pause();
 			$("#toggle").attr("class","play pause");
 			stop();
             playPrevSound();
@@ -787,13 +788,15 @@ function padDigits(number) {
 				$("#download").attr("onclick","");
 				$("#download").hide();
 			}
-			SC.stream(track.uri, {autoPlay: false, onfinish:playNextSound}, function (audioManager) {
+			SC.stream(track.uri, {autoPlay: true, onfinish:playNextSound}, function (audioManager) {
 			  var player = audioManager._player;
 			  player.on("stateChange", function(evt){
 			    console.log(evt);
 			    switch(evt) {
 			      case "ended":
+                    stop();
                     playNextSound();
+				    block = true;
                     break;
 			    }
 			  });

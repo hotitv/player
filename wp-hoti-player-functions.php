@@ -742,17 +742,19 @@ if($detect->isIOS()){
 			}else{
 				window.stream.pause();
 			}
-			$("#toggle").toggleClass("pause");
+			$("#toggle").toggleClass("play pause");
 		});
 		$("#next").on("click", function () { 
-			window.stream.stop();
+			stop();
 			$("#toggle").attr("class","play pause");
-			playNextSound();
+			stop();
+            playNextSound();
 		});
 		$("#prev").on("click", function () { 
-			window.stream.stop();
+			stop();
 			$("#toggle").attr("class","play pause");
-			playPrevSound();
+			stop();
+            playPrevSound();
 		});
 	},false);
 
@@ -791,8 +793,8 @@ function padDigits(number) {
 			    console.log(evt);
 			    switch(evt) {
 			      case "ended":
-			      	playNextSound();
-			        break;
+                    playNextSound();
+                    break;
 			    }
 			  });
 			  window.stream = player;
@@ -1303,7 +1305,7 @@ function prefix_add_my_stylesheet() {
 
 function my_soundcloud_enqueue() {
    wp_deregister_script('soundcloud');
-   wp_register_script('soundcloud', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://connect.soundcloud.com/sdk-2.0.0.js", false, null);
+   wp_register_script( 'soundcloud', plugins_url('js/SoundCloud2.js', __FILE__) );
    wp_enqueue_script('soundcloud');
 }
 

@@ -796,9 +796,7 @@ function padDigits(number) {
 			    console.log(evt);
 			    switch(evt) {
 			      case "ended":
-                    stop();
                     playNextSound();                
-                    block = true;
                     break;
 			    }
 			  });

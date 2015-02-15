@@ -19,6 +19,10 @@ font-weight: normal;
 font-style: normal;
 }
 
+.audiojs {
+  display: none;
+}
+
 .hoti{
 background-color: none!important;
 background-repeat:no-repeat;

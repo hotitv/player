@@ -1,18 +1,18 @@
 Wordpress Plugin hoti™ player
 (based on wordpress plugin by thomas michalak)
 
-Contributors: Thomas Michalak, Alexander Salas, Marcos Colina, Masahito Otsuka.
+Contributors: Thomas Michalak, Alexander Salas, Marcos Colina, masahito otsuka.
 Tags: html5, hoti, player, music
 Requires at least: 3.2
-Tested up to: 4.1
-Stable tag: 1.8
+Tested up to: 3.9.1
+Stable tag: 2.2.1
 
 Descripcion: Internal use.
 
 License:
 
     hoti - Venezuelan Artistic Material
-    Copyright (C) 2015 Marcos Colina
+    Copyright (C) 2013 Marcos Colina
     GNU General Public License
 	
 	Contributors

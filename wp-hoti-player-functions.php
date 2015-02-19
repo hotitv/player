@@ -624,12 +624,11 @@ function hoti_player($id, $user, $autoPlay, $comments, $width, $classes, $player
 	}
 
     $player = '<div class="hoti '.esc_attr($classes).'" id="soundcloud-'.esc_attr($id).'">';
+		$player .= '<audio id="audiojs" preload></audio>';    
 	$detect = new Mobile_Detect;
-	if($detect->isIOS()){
- 		//$iOS = 'window.stream.play();';
+	if($detect->isMobile() || $detect->isTablet()){
 		$ap = 'false';
 	}else{
-		$iOS = '';
 		$ap = 'true'; 
 	}
 	//Flash Player
@@ -654,7 +653,7 @@ function hoti_player($id, $user, $autoPlay, $comments, $width, $classes, $player
 if($format == 'tracks') {
 	$player .= <<<MY_MARKER
 	<script>
-    jQuery.noConflict();
+jQuery.noConflict();
 	(function($){
 	$(function() {
 	var block = false;
@@ -671,16 +670,16 @@ if($format == 'tracks') {
 						$("#download").hide();
 				}
 			document.querySelector('.hoti').style.backgroundImage="url('"+track.artwork_url.split("large").join("crop")+"')";
-      var audios = document.getElementsByTagName('audio');
-			var stream = audiojs.create(audios[0], {
+			var audios = document.getElementsByTagName('audio');
+      window.stream = audiojs.create(audios[0], {
         css: false,
         trackEnded: function() {
-          stream.load("http://api.soundcloud.com/tracks/$id/stream?client_id=43195eb2f2b85520cb5f65e78d6501bf");
-          stream.play();
+          window.stream.load("http://api.soundcloud.com/tracks/$id/stream?client_id=43195eb2f2b85520cb5f65e78d6501bf");
+          window.stream.play();
         }
       });
-      stream.load('http://api.soundcloud.com/tracks/$id/stream?client_id=43195eb2f2b85520cb5f65e78d6501bf');
-			stream.play();
+      window.stream.load('http://api.soundcloud.com/tracks/$id/stream?client_id=43195eb2f2b85520cb5f65e78d6501bf');
+			window.stream.play();
 				window.stream = stream;
 				if($ap){
 					block = true;
@@ -717,12 +716,11 @@ MY_MARKER;
 }else{
 	$player .= <<<MY_MARKER
 	<script>
-    jQuery.noConflict();
+   jQuery.noConflict();
 	(function($){
 	$(function() {
 	var playlists = {};
 	var current = 0;
-	var block = false;
 	var artwork_url= "";
 	var objImage = new Image(400,400); 
 	function imagesLoaded(){
@@ -730,17 +728,24 @@ MY_MARKER;
 	}
 	window.addEventListener("load", function load(event){
 		window.removeEventListener("load", load, false); 
+    var audios = document.getElementsByTagName('audio');
+    window.stream = audiojs.create(audios[0], {
+      css: false,
+      trackEnded: function() {
+        playNextSound();
+      }
+    });
 		SC.get("/playlists/$id", function (playlist) {
 			playlists = playlist.tracks;
 			artwork_url = playlist.artwork_url;
-			  if($ap){
-				playSong(0);
-				block = true;
+			if($ap) {
+				playSong(0, true);
 				$("#toggle").toggleClass("pause");
-			  }
+			}else{
+        playSong(0, false);
+      }
 			if(playlist.artwork_url != null){
-				if (document.images)
-				{
+				if (document.images) {
 				  objImage.onLoad=imagesLoaded();
 				  objImage.src= playlist.artwork_url.split("large").join("crop");
 				}
@@ -748,25 +753,21 @@ MY_MARKER;
 		});
 
 		$("#toggle").on("click", function () {
-			if(!block){
-				window.stream.play();
-				block = true;
-			}else{
+			if($("#toggle").hasClass("pause")){
 				window.stream.pause();
-                block = false;
+			}else{
+				window.stream.play();
 			}
 			$("#toggle").toggleClass("pause");
 		});
 		$("#next").on("click", function () { 
 			window.stream.pause();
             $("#toggle").attr("class","play pause");
-			stop();
             playNextSound();
 		});
 		$("#prev").on("click", function () { 
 			window.stream.pause();
             $("#toggle").attr("class","play pause");
-			stop();
             playPrevSound();
 		});
 	},false);
@@ -775,7 +776,7 @@ function padDigits(number) {
     return Array(Math.max(3 - String(number).length + 1, 0)).join(0) + number;
 }
 	
-	function playSong(i){
+	function playSong(i, play){
 			current = i;
 			var track = playlists[i];
 			document.getElementById('title').innerHTML = track.title;
@@ -801,33 +802,24 @@ function padDigits(number) {
 				$("#download").attr("onclick","");
 				$("#download").hide();
 			}
-        SC.stream(track.uri, {autoPlay: false, onfinish:playNextSound}, function (audioManager) {
-			  var player = audioManager._player;
-			  player.on("stateChange", function(evt){
-			    console.log(evt);
-			    switch(evt) {
-			      case "ended":
-			      	playNextSound();
-			        break;
-			    }
-			  });
-			  window.stream = player;
-			  window.stream.play();
-			});
+
+      window.stream.load("http://api.soundcloud.com/tracks/"+track.id+"/stream?client_id=43195eb2f2b85520cb5f65e78d6501bf");
+      if(play)
+        window.stream.play();
 	}
 	
 	function playNextSound(){
 		if(playlists.length-1 > current)
-			playSong(current + 1);
+			playSong(current + 1, true);
 		else
-			playSong(0);
+			playSong(0, true);
 	}
 	
 	function playPrevSound(){
 		if(current==0)
-			playSong(playlists.length-1);
+			playSong(playlists.length-1, true);
 		else
-			playSong(current - 1);
+			playSong(current - 1, true);
 	}
 });
 })(jQuery);
@@ -846,7 +838,6 @@ MY_MARKER;
 	$player .= '</div>';
 	$player .= '<h5 id="track"></h5>';
 	$player .= '<h2 Playing Now:></h2><h2 id="title"></h2>';
-	$player .= '<audio preload></audio>';    
 	return $player;
 }
 

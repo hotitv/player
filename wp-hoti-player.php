@@ -5,10 +5,11 @@ Plugin URI: https://github.com/marcoscolina/player
 Description: Reproductor musical diseñado para hoti™ plataforma.artistica
 Author: Alexander Salas & Marcos Colina
 Author URI: http://hoti.tv/contacto
-Version: 1.8
+Version: 2.0
 Tags: hoti,plataforma,artistica
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+GitHub Plugin URI: https://github.com/marcoscolina/player
 */
 
 define ('SIG_PLUGIN_DIR', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)) );
